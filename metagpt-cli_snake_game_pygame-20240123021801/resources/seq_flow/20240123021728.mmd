@@ -1,0 +1,16 @@
+
+sequenceDiagram
+    participant M as Main
+    participant G as Game
+    participant S as Snake
+    participant F as Food
+    M->>G: start_game()
+    G->>S: move()
+    S-->>G: body
+    G->>F: generate()
+    F-->>G: x, y
+    G->>S: check_collision()
+    S-->>G: running
+    G->>G: update()
+    G->>G: draw()
+    G->>S: change_direction(direction)
